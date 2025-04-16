@@ -104,3 +104,23 @@ const checkCredentials = (username, password) => {
 console.log(checkCredentials('', 'password'));
 console.log(checkCredentials('username', ''));
 console.log(checkCredentials('username', 'password'));
+
+// This function checks if employee works full time or part time,
+// with 40 hours as benchmark
+const employeeType = (hoursWorked) => {
+  // Check work hours using ternary operator
+  return hoursWorked >= 40 ? 'Full-time' : 'Part-time';
+};
+
+// Call the function with 2 values
+console.log(employeeType(40));
+console.log(employeeType(39));
+
+// This arrow function takes 2 numbers and returns the larger number
+const largerNumber = (num1, num2) => {
+  return num1 > num2 ? num1 : num2;
+};
+
+// Call the function with 2 values
+console.log(largerNumber(10, 20));
+console.log(largerNumber(20, 10));
