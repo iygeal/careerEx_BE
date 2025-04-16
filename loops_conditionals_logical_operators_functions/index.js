@@ -17,35 +17,35 @@ function votingEligibility(age) {
   // Check if the age is greater than or equal to 18
   if (age >= 18) {
     // This means the person is eligible to vote
-    console.log('You are eligible to vote');
+    return 'You are eligible to vote';
   } else {
     // This means the person is not eligible to vote
-    console.log('Not eligible');
+    return 'Not eligible';
   }
 }
 
 // Call the function with age
-votingEligibility(20);
-votingEligibility(15);
+console.log(votingEligibility(18));
+console.log(votingEligibility(17));
 
-// The below function checks a student's score and logs a message
+// The below function checks a student's score and returns a message
 const checkScore = (score) => {
   if (score >= 90) {
-    console.log('Excellent');
+    return 'Excellent';
   } else if (score >= 75) {
-    console.log('Good');
+    return 'Good';
   } else if (score >= 50) {
-    console.log('Average');
+    return 'Average';
   } else {
-    console.log('Fail');
+    return 'Fail';
   }
 };
 
 // Call the function with 4 scores
-checkScore(100);
-checkScore(80);
-checkScore(50);
-checkScore(25);
+console.log(checkScore(95));
+console.log(checkScore(75));
+console.log(checkScore(50));
+console.log(checkScore(25));
 
 const checkAccess = (hasID, isAbove18) => {
   // Check if the student has an ID and is above 18
@@ -60,7 +60,7 @@ console.log(checkAccess(false, true));
 // Array of student scores
 const studentScores = [85, 50, 90, 60, 75, 45];
 
-// Looping through and checking with a for loop
+// Looping through and checking scores with a for loop
 for (let a = 0; a < studentScores.length; a++) {
   if (studentScores[a] > 50) {
     console.log('Pass');
@@ -68,3 +68,39 @@ for (let a = 0; a < studentScores.length; a++) {
     console.log('Fail');
   }
 }
+
+// The below arrow returns Yes if student passes both English and Maths
+const checkIfStudentPassed = (mathScore, englishScore) => {
+  return mathScore >= 50 && englishScore >= 50 ? 'Yes' : 'No';
+};
+
+// Call the function with 2 scores
+console.log(checkIfStudentPassed(50, 50));
+console.log(checkIfStudentPassed(50, 40));
+
+// Below function checks if a student has either an email or a phone number
+// before signing up
+const canSignUp = (hasEmail, hasPhoneNumber) => {
+  return hasEmail || hasPhoneNumber ? 'Can Sign Up' : 'Cannot Sign Up';
+};
+
+// Call the function with some values
+console.log(canSignUp(true, false));
+console.log(canSignUp(false, true));
+console.log(canSignUp(false, false));
+
+// This function takes username and password
+// It returns "Invalid input" if one of them is empty using || operator
+
+const checkCredentials = (username, password) => {
+  if (username == '' || password == '') {
+    return 'Invalid input';
+  } else {
+    return 'Valid input';
+  }
+};
+
+// Call the function with some values
+console.log(checkCredentials('', 'password'));
+console.log(checkCredentials('username', ''));
+console.log(checkCredentials('username', 'password'));
