@@ -201,3 +201,15 @@ const drugs = [
     manufacturer: 'Nature’s Bounty',
   },
 ];
+
+// Get all drugs from the array which fall to the category of antibiotic
+
+const antibiotics = drugs
+  // Filter out antibiotics
+  .filter((each) => each.category === 'Antibiotic')
+
+  // Use map to display just the name for cleaner output
+  .map((each) => each.name);
+
+// Output as an array of just the names of antibiotics
+console.log(antibiotics);
