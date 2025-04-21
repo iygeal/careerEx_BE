@@ -202,7 +202,7 @@ const drugs = [
   },
 ];
 
-// Get all drugs from the array which fall to the category of antibiotic
+//1.  Get all drugs from the array which fall to the category of antibiotic
 
 const antibiotics = drugs
   // Filter out antibiotics
@@ -213,3 +213,55 @@ const antibiotics = drugs
 
 // Output as an array of just the names of antibiotics
 console.log(antibiotics);
+
+//2. Return an array of just the drug names in small letters
+
+const lowercaseDrugs = drugs.map((each) => each.name.toLowerCase());
+
+// Output as an array of just the names in small letters
+console.log(lowercaseDrugs);
+
+// 3. Write a function that accepts a category and returns all drugs under that
+// category
+
+const getDrugsByCategory = (category) => {
+  return drugs
+    .filter((each) => each.category === category)
+    .map((each) => each.name);
+};
+
+// Test with category 'Antibiotic'
+console.log(getDrugsByCategory('Antibiotic'));
+// Test again with category 'Antimalarial'
+console.log(getDrugsByCategory('Antimalarial'));
+
+// 4. Log drug names and manufacturers to the console
+
+drugs.forEach((each) => {
+  console.log(`Drug: ${each.name}, Manufacturer: ${each.manufacturer}`);
+});
+
+
+// 5. Return all drugs that require a prescription
+
+const prescriptionDrugs = drugs.filter((each) => each.isPrescriptionOnly);
+// Output as an array of just the names of prescription drugs (for testing)
+console.log(prescriptionDrugs.map((each) => each.name));
+
+// 6. New array with the format: "Drug: [name] - [dosageMg]mg".
+
+const formattedDrugs = drugs.map((each) => {
+  return `Drug: [${each.name}] - [${each.dosageMg}]mg`;
+})
+// Output as an array of just the formatted drugs (for testing)
+console.log(formattedDrugs);
+
+
+// 7. Write a function that returns all drugs with a stock less than 50.
+
+const getLowStockDrugs = () => {
+  return drugs.filter((each) => each.stock < 50);
+};
+
+// Output as an array of just the names of low stock drugs (for testing)
+console.log(getLowStockDrugs().map((each) => each.name));
